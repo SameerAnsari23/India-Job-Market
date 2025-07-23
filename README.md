@@ -3,11 +3,9 @@
 A dynamic and interactive web dashboard that visualizes current job market trends in India for 2025. From the rise of AI-centric roles to growing opportunities in Tier-2 cities, this project offers valuable insights for job seekers, students, and professionals.
 
 🚀 Live Demo
-
 🔗 View Live Project -- https://india-job-market.vercel.app/#top-roles
 
 📊 **Features**
-
 🔍 Highlights top 15 most in-demand job roles
 🛠️ Lists most requested skills, tools, and platforms
 🗺️ Shows hiring trends across major Indian cities
