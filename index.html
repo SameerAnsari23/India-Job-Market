@@ -86,7 +86,7 @@
     </nav>
 
     <main class="max-w-7xl mx-auto p-4 md:p-8">
-        
+
         <section id="header" class="text-center mb-16">
             <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
                 India's 2025 Job Market
@@ -120,7 +120,7 @@
         <section id="ai-boom" class="mb-16 bg-white rounded-lg shadow-lg p-8">
             <h2 class="text-3xl font-bold text-center mb-2 text-indigo-600">The AI Imperative: A Market Redefined</h2>
             <p class="text-center text-gray-600 mb-8 max-w-4xl mx-auto">The defining feature of India's 2025 job market is the explosive demand for AI & ML skills. This is not just a trend; it's a fundamental restructuring of the talent landscape, creating massive opportunities and significant salary premiums.</p>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div>
                     <h3 class="text-xl font-bold mb-4">AI vs. Non-AI Job Growth (YoY)</h3>
@@ -132,7 +132,7 @@
                 <div>
                     <h3 class="text-xl font-bold mb-4">The AI Salary Premium</h3>
                     <p class="text-gray-600 mb-4">Possessing AI skills provides a massive financial incentive. The median salary for AI-skilled professionals is over 50% higher than their non-AI counterparts, a premium that extends across all experience levels.</p>
-                     <div class="chart-container h-64 md:h-80">
+                    <div class="chart-container h-64 md:h-80">
                         <canvas id="aiSalaryChart"></canvas>
                     </div>
                 </div>
@@ -169,7 +169,7 @@
                     </div>
                 </div>
                 <div>
-                     <h3 class="text-xl font-bold mb-4">Hiring Growth in Emerging Cities (BPO/ITES)</h3>
+                    <h3 class="text-xl font-bold mb-4">Hiring Growth in Emerging Cities (BPO/ITES)</h3>
                     <div class="chart-container h-64 md:h-80">
                         <canvas id="emergingCitiesChart"></canvas>
                     </div>
@@ -199,7 +199,7 @@
                                 <p class="text-sm text-gray-600">AWS, Azure, or GCP</p>
                             </div>
                         </div>
-                         <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-arrow">↓</div>
                         <div class="flowchart-step">
                             <span class="text-2xl mr-4">📦</span>
                             <div>
@@ -207,7 +207,7 @@
                                 <p class="text-sm text-gray-600">Docker & Kubernetes</p>
                             </div>
                         </div>
-                         <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-arrow">↓</div>
                         <div class="flowchart-step">
                             <span class="text-2xl mr-4">🏗️</span>
                             <div>
@@ -233,7 +233,7 @@
                             <h4 class="font-bold text-purple-800">Technology: AWS/Azure & CISSP</h4>
                             <p class="text-sm text-purple-700">Essential for cloud architecture and cybersecurity leadership.</p>
                         </div>
-                         <div class="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                        <div class="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
                             <h4 class="font-bold text-yellow-800">Marketing: Google & HubSpot</h4>
                             <p class="text-sm text-yellow-700">Demonstrates practical expertise on key industry platforms.</p>
                         </div>
@@ -285,7 +285,7 @@
                 }
             }
         };
-        
+
         function wrapLabel(str, maxWidth = 16) {
             if (str.length <= maxWidth) return str;
             const words = str.split(' ');
@@ -354,7 +354,7 @@
                 }
             }
         });
-        
+
         new Chart(document.getElementById('aiIndustryChart'), {
             type: 'polarArea',
             data: {
@@ -434,7 +434,7 @@
                 }
             }
         });
-        
+
         new Chart(document.getElementById('emergingCitiesChart'), {
             type: 'bar',
             data: {
