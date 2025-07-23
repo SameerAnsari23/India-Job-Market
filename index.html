@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India's 2025 Job Market: An Interactive Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F0F4F8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .kpi-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .flowchart-step {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            background-color: #E0E7FF;
+            border: 2px solid #C7D2FE;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        .flowchart-arrow {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #4F46E5;
+            margin: -0.5rem 0;
+        }
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <nav class="sticky-nav shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="font-extrabold text-xl text-indigo-600">INDIA JOB MARKET 2025</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#overview" class="text-gray-600 hover:bg-indigo-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Overview</a>
+                        <a href="#ai-boom" class="text-gray-600 hover:bg-indigo-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium">The AI Boom</a>
+                        <a href="#top-roles" class="text-gray-600 hover:bg-indigo-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Top Roles</a>
+                        <a href="#skills" class="text-gray-600 hover:bg-indigo-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Future Skills</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto p-4 md:p-8">
+        
+        <section id="header" class="text-center mb-16">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
+                India's 2025 Job Market
+            </h1>
+            <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                An interactive analysis of a nation in transformation, driven by unprecedented growth, technological disruption, and the meteoric rise of Artificial Intelligence.
+            </p>
+        </section>
+
+        <section id="overview" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-indigo-600">Economic & Workforce Highlights</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="kpi-card text-center">
+                    <div class="text-6xl font-extrabold text-indigo-500">~80%</div>
+                    <p class="mt-2 text-lg font-semibold">Surge in Formal Jobs</p>
+                    <p class="text-gray-500">Job postings have rebounded sharply, surging to levels nearly 80% above the pre-pandemic baseline.</p>
+                </div>
+                <div class="kpi-card text-center">
+                    <div class="text-6xl font-extrabold text-green-500">#1</div>
+                    <p class="mt-2 text-lg font-semibold">Projected GDP Growth</p>
+                    <p class="text-gray-500">India is projected to record the highest GDP growth among all major economies in 2025.</p>
+                </div>
+                <div class="kpi-card text-center">
+                    <div class="text-6xl font-extrabold text-blue-500">23.5M</div>
+                    <p class="mt-2 text-lg font-semibold">Gig Workforce by 2030</p>
+                    <p class="text-gray-500">The gig economy is a core part of workforce strategy, projected to grow from 7M in 2021.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="ai-boom" class="mb-16 bg-white rounded-lg shadow-lg p-8">
+            <h2 class="text-3xl font-bold text-center mb-2 text-indigo-600">The AI Imperative: A Market Redefined</h2>
+            <p class="text-center text-gray-600 mb-8 max-w-4xl mx-auto">The defining feature of India's 2025 job market is the explosive demand for AI & ML skills. This is not just a trend; it's a fundamental restructuring of the talent landscape, creating massive opportunities and significant salary premiums.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">AI vs. Non-AI Job Growth (YoY)</h3>
+                    <p class="text-gray-600 mb-4">The demand for AI/ML roles is dramatically outpacing traditional tech jobs, highlighting a clear and decisive shift in hiring priorities across all industries.</p>
+                    <div class="chart-container h-64 md:h-80">
+                        <canvas id="aiGrowthChart"></canvas>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">The AI Salary Premium</h3>
+                    <p class="text-gray-600 mb-4">Possessing AI skills provides a massive financial incentive. The median salary for AI-skilled professionals is over 50% higher than their non-AI counterparts, a premium that extends across all experience levels.</p>
+                     <div class="chart-container h-64 md:h-80">
+                        <canvas id="aiSalaryChart"></canvas>
+                    </div>
+                </div>
+                <div class="md:col-span-2">
+                    <h3 class="text-xl font-bold mb-4 text-center mt-8">AI's Proliferation Beyond Tech</h3>
+                    <p class="text-center text-gray-600 mb-4 max-w-4xl mx-auto">While the IT sector is the largest hub for AI talent, the most dynamic growth is now happening in other industries as they integrate AI to drive efficiency and innovation.</p>
+                    <div class="chart-container mx-auto h-80 md:h-96">
+                        <canvas id="aiIndustryChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="top-roles" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-indigo-600">Top 15 In-Demand Roles for 2025</h2>
+            <p class="text-center text-gray-600 mb-8 max-w-4xl mx-auto">Across Technology, Finance, Marketing, and Operations, these 15 roles represent the pinnacle of demand in the Indian job market, each requiring a unique blend of technical and soft skills.</p>
+            <div class="chart-container mx-auto" style="height: 600px; max-height: 800px;">
+                <canvas id="topRolesChart"></canvas>
+            </div>
+        </section>
+
+        <section id="geography-shift" class="mb-16 bg-white rounded-lg shadow-lg p-8">
+            <h2 class="text-3xl font-bold text-center mb-2 text-indigo-600">The Decentralization of Opportunity</h2>
+            <p class="text-center text-gray-600 mb-8 max-w-4xl mx-auto">Hiring is no longer confined to metro hubs. A new wave of growth is being driven by Tier-2 and Tier-3 cities, which are becoming self-sustaining economic ecosystems.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Fastest-Growing Job Markets</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center"><span class="text-2xl mr-3">🏙️</span><span class="font-semibold text-lg">Visakhapatnam</span></div>
+                        <div class="flex items-center"><span class="text-2xl mr-3">🏙️</span><span class="font-semibold text-lg">Jaipur</span></div>
+                        <div class="flex items-center"><span class="text-2xl mr-3">🏙️</span><span class="font-semibold text-lg">Coimbatore</span></div>
+                        <div class="flex items-center"><span class="text-2xl mr-3">🏙️</span><span class="font-semibold text-lg">Ranchi</span></div>
+                        <div class="flex items-center"><span class="text-2xl mr-3">🏙️</span><span class="font-semibold text-lg">Nashik</span></div>
+                    </div>
+                </div>
+                <div>
+                     <h3 class="text-xl font-bold mb-4">Hiring Growth in Emerging Cities (BPO/ITES)</h3>
+                    <div class="chart-container h-64 md:h-80">
+                        <canvas id="emergingCitiesChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-indigo-600">The New Arsenal: Future-Ready Skills & Stacks</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold mb-4 text-center">The Modern "Cloud-Native" Stack</h3>
+                    <p class="text-gray-600 mb-6 text-center">Proficiency in a language and framework is no longer enough. The most valuable developers master the entire cloud development lifecycle.</p>
+                    <div class="flowchart">
+                        <div class="flowchart-step">
+                            <span class="text-2xl mr-4">💻</span>
+                            <div>
+                                <h4 class="font-bold">Core Programming</h4>
+                                <p class="text-sm text-gray-600">Java, Python, JavaScript</p>
+                            </div>
+                        </div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-step">
+                            <span class="text-2xl mr-4">☁️</span>
+                            <div>
+                                <h4 class="font-bold">Cloud Platform</h4>
+                                <p class="text-sm text-gray-600">AWS, Azure, or GCP</p>
+                            </div>
+                        </div>
+                         <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-step">
+                            <span class="text-2xl mr-4">📦</span>
+                            <div>
+                                <h4 class="font-bold">Containerization</h4>
+                                <p class="text-sm text-gray-600">Docker & Kubernetes</p>
+                            </div>
+                        </div>
+                         <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-step">
+                            <span class="text-2xl mr-4">🏗️</span>
+                            <div>
+                                <h4 class="font-bold">Infrastructure as Code</h4>
+                                <p class="text-sm text-gray-600">Terraform or Ansible</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold mb-4 text-center">High-Impact Certifications</h3>
+                    <p class="text-gray-600 mb-6 text-center">In a skills-first market, verifiable credentials are a critical currency for career advancement across all major domains.</p>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                            <h4 class="font-bold text-blue-800">Finance: CFA & FRM</h4>
+                            <p class="text-sm text-blue-700">Gold standard for investment and risk management.</p>
+                        </div>
+                        <div class="p-4 bg-green-50 border border-green-200 rounded-lg">
+                            <h4 class="font-bold text-green-800">Management: PMP & Six Sigma</h4>
+                            <p class="text-sm text-green-700">Crucial for project management and operational excellence.</p>
+                        </div>
+                        <div class="p-4 bg-purple-50 border border-purple-200 rounded-lg">
+                            <h4 class="font-bold text-purple-800">Technology: AWS/Azure & CISSP</h4>
+                            <p class="text-sm text-purple-700">Essential for cloud architecture and cybersecurity leadership.</p>
+                        </div>
+                         <div class="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                            <h4 class="font-bold text-yellow-800">Marketing: Google & HubSpot</h4>
+                            <p class="text-sm text-yellow-700">Demonstrates practical expertise on key industry platforms.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 mt-16">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center text-gray-400">
+            <p>&copy; 2025 India Job Market Analysis. All data synthesized from public reports and job portal analytics.</p>
+            <p class="text-xs mt-2">This is a visual representation and should not be used for financial or investment decisions.</p>
+        </div>
+    </footer>
+
+    <script>
+        const vibrantPalette = {
+            blue: '#3B82F6',   // Energetic & Playful - Blue
+            purple: '#8B5CF6', // Energetic & Playful - Purple
+            green: '#22C55E',  // Energetic & Playful - Green
+            yellow: '#F59E0B', // Energetic & Playful - Amber
+            red: '#EF4444',    // Energetic & Playful - Red
+            pink: '#EC4899',   // Energetic & Playful - Pink
+            teal: '#14B8A6',
+            orange: '#F97316',
+            lightBlue: 'rgba(59, 130, 246, 0.6)',
+            lightPurple: 'rgba(139, 92, 246, 0.6)',
+            lightGreen: 'rgba(34, 197, 94, 0.6)',
+            lightYellow: 'rgba(245, 158, 11, 0.6)',
+            lightRed: 'rgba(239, 68, 68, 0.6)',
+        };
+
+        const tooltipCallbacks = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            } else {
+                              return label;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+        
+        function wrapLabel(str, maxWidth = 16) {
+            if (str.length <= maxWidth) return str;
+            const words = str.split(' ');
+            let lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxWidth && currentLine.length > 0) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine) lines.push(currentLine);
+            return lines;
+        }
+
+
+        new Chart(document.getElementById('aiGrowthChart'), {
+            type: 'bar',
+            data: {
+                labels: ['AI/ML Job Growth', 'Non-AI Tech Job Growth'],
+                datasets: [{
+                    label: 'Year-over-Year Growth',
+                    data: [42, 8],
+                    backgroundColor: [vibrantPalette.purple, vibrantPalette.lightPurple],
+                    borderColor: [vibrantPalette.purple, vibrantPalette.lightPurple],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                ...tooltipCallbacks,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Growth (%)' }
+                    }
+                },
+                plugins: {
+                    ...tooltipCallbacks.plugins,
+                    legend: { display: false }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('aiSalaryChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['AI Salary Premium', 'Base Salary'],
+                datasets: [{
+                    label: 'Salary Comparison',
+                    data: [53, 100],
+                    backgroundColor: [vibrantPalette.green, vibrantPalette.lightGreen],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                ...tooltipCallbacks,
+                maintainAspectRatio: false,
+                plugins: {
+                    ...tooltipCallbacks.plugins,
+                    legend: { position: 'bottom' },
+                    title: { display: true, text: 'AI Salary Premium: +53%' }
+                }
+            }
+        });
+        
+        new Chart(document.getElementById('aiIndustryChart'), {
+            type: 'polarArea',
+            data: {
+                labels: ['BFSI', 'BPO/ITES', 'KPO/Accounting', 'Healthcare', 'E-commerce'],
+                datasets: [{
+                    label: 'YoY Growth in AI Hiring',
+                    data: [48, 39, 52, 35, 45],
+                    backgroundColor: [
+                        vibrantPalette.lightBlue,
+                        vibrantPalette.lightPurple,
+                        vibrantPalette.lightGreen,
+                        vibrantPalette.lightRed,
+                        vibrantPalette.lightYellow
+                    ]
+                }]
+            },
+            options: {
+                ...tooltipCallbacks,
+                maintainAspectRatio: false,
+                 plugins: {
+                    ...tooltipCallbacks.plugins,
+                    legend: { position: 'right' }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('topRolesChart'), {
+            type: 'bar',
+            data: {
+                labels: [
+                    wrapLabel('AI/ML Engineer'), wrapLabel('Data Scientist'), wrapLabel('Full Stack Developer'),
+                    wrapLabel('Cloud Engineer'), wrapLabel('Cybersecurity Analyst'), wrapLabel('DevOps Engineer'),
+                    wrapLabel('RPA Developer'), wrapLabel('Financial Analyst'), wrapLabel('Risk & Compliance Officer'),
+                    wrapLabel('Fintech Product Manager'), wrapLabel('Digital Marketing Manager'), wrapLabel('SEO Specialist'),
+                    wrapLabel('Performance Marketing Manager'), wrapLabel('Supply Chain Manager'), wrapLabel('Operations Manager')
+                ].reverse(),
+                datasets: [
+                    {
+                        label: 'Technology',
+                        data: [35000, 28000, 32000, 25000, 22000, 24000, 18000, 0, 0, 0, 0, 0, 0, 0, 0].reverse(),
+                        backgroundColor: vibrantPalette.blue,
+                    },
+                    {
+                        label: 'Finance',
+                        data: [0, 0, 0, 0, 0, 0, 0, 15000, 17000, 19000, 0, 0, 0, 0, 0].reverse(),
+                        backgroundColor: vibrantPalette.green,
+                    },
+                    {
+                        label: 'Marketing',
+                        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20000, 16000, 18000, 0, 0].reverse(),
+                        backgroundColor: vibrantPalette.yellow,
+                    },
+                     {
+                        label: 'Operations',
+                        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14000, 12000].reverse(),
+                        backgroundColor: vibrantPalette.red,
+                    }
+                ]
+            },
+            options: {
+                ...tooltipCallbacks,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        stacked: true,
+                        title: { display: true, text: 'Relative Demand (Estimated Postings)' }
+                    },
+                    y: {
+                        stacked: true,
+                    }
+                },
+                plugins: {
+                    ...tooltipCallbacks.plugins,
+                    legend: { position: 'top' },
+                    title: { display: true, text: 'Relative Demand for Top Roles by Sector' }
+                }
+            }
+        });
+        
+        new Chart(document.getElementById('emergingCitiesChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Jaipur', 'Baroda (Vadodara)', 'Coimbatore (Freshers)'],
+                datasets: [{
+                    label: 'Hiring Growth (%)',
+                    data: [64, 54, 24],
+                    backgroundColor: [vibrantPalette.orange, vibrantPalette.teal, vibrantPalette.pink],
+                }]
+            },
+            options: {
+                ...tooltipCallbacks,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'YoY Growth (%)' }
+                    }
+                },
+                plugins: {
+                    ...tooltipCallbacks.plugins,
+                    legend: { display: false }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
