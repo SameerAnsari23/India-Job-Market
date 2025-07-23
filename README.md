@@ -1,4 +1,5 @@
 **🇮🇳 India Job Market Dashboard – 2025 Edition**
+
 A dynamic and interactive web dashboard that visualizes current job market trends in India for 2025. From the rise of AI-centric roles to growing opportunities in Tier-2 cities, this project offers valuable insights for job seekers, students, and professionals.
 
 🚀 Live Demo
